@@ -11,10 +11,11 @@ class ImageArrival extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      width: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.symmetric(horizontal: 22),
       child: Image.asset(
         image,
-        // height: 20,
+        fit: BoxFit.fill,
       ),
     );
   }

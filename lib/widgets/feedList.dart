@@ -38,6 +38,16 @@ class Feedlist extends StatelessWidget {
           ],
         ),
       ),
+      //   child: GridView.count(
+      //   mainAxisSpacing: 24,
+      //   crossAxisCount: 2,
+      //   children: [
+      //     BoxItem(itemImage: 'lib/icons/artsy.png', itemName: 'Artsy',),
+      //     BoxItem(itemImage: 'lib/icons/berkely.png', itemName: 'berkely',),
+      //     BoxItem(itemImage: 'lib/icons/capucinus.png', itemName: 'Capucinus',),
+      //     BoxItem(itemImage: 'lib/icons/monogram.png', itemName: 'Monogram',),
+      //   ],
+      // ),
     );
   }
 }

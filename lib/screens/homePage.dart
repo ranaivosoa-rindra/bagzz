@@ -19,18 +19,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: Container(
         width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.only(
-          bottom: 17, 
-          left: 12, 
-          right: 12
-        ),
+        margin: EdgeInsets.only(bottom: 17, left: 12, right: 12),
         child: BottomBar(),
       ),
       body: SafeArea(
@@ -44,8 +39,7 @@ class _HomePageState extends State<HomePage> {
 
                 /// cards scrollable horizontally : this season's latest
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  height: 195,
+                  height: 200,
                   child: PageView(
                     scrollDirection: Axis.horizontal,
                     children: [
@@ -68,16 +62,15 @@ class _HomePageState extends State<HomePage> {
                 /// show by categories
                 // latest button
                 OutlinedButton(
-                  onPressed: (){}, 
+                  onPressed: () {},
                   child: Text(
-                      "check all latest".toUpperCase(),
-                      style: GoogleFonts.workSans(
+                    "check all latest".toUpperCase(),
+                    style: GoogleFonts.workSans(
                         color: Colors.black,
                         fontWeight: FontWeight.w600,
-                        fontSize: 14
-                      ),
-                    ),
+                        fontSize: 14),
                   ),
+                ),
 
                 SizedBox(
                   height: 20,
@@ -100,15 +93,15 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
 
-                      SizedBox(height: 15,),
+                      SizedBox(
+                        height: 15,
+                      ),
 
                       // all categories items
                       AllCategoriesItems(),
                     ],
                   ),
                 ),
-
-                /// bottom bar
               ],
             ),
           ),

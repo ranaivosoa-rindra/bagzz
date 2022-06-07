@@ -35,7 +35,7 @@ class _BoxItemState extends State<BoxItem> {
                 children: [
                   // item image
                   Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
+                    padding: const EdgeInsets.only(left: 15.0),
                     child: Image.asset(
                       widget.itemImage,
                       height: 80,
@@ -44,7 +44,7 @@ class _BoxItemState extends State<BoxItem> {
 
                   // outline heart Icons
                   Container(
-                    padding: EdgeInsets.only(left: 10),
+                    margin: EdgeInsets.only(left: 22),
                     child: InkWell(
                       child: (isLiked)
                           ? Image.asset('lib/icons/heart-full.png', width: 15)
