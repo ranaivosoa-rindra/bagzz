@@ -7,7 +7,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class BoxItem extends StatefulWidget {
   final String itemImage;
-  const BoxItem({Key? key, required this.itemImage}) : super(key: key);
+  final String itemName;
+  const BoxItem({Key? key, required this.itemImage, required this.itemName}) : super(key: key);
 
   @override
   State<BoxItem> createState() => _BoxItemState();
@@ -61,7 +62,7 @@ class _BoxItemState extends State<BoxItem> {
             ),
             SizedBox(height: 10),
             Text(
-              "Artsy",
+              widget.itemName,
               style: GoogleFonts.playfairDisplay(
                 fontWeight: FontWeight.bold,
                 fontSize: 17,

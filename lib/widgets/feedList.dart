@@ -22,11 +22,8 @@ class Feedlist extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // artsy
-                BoxItem(itemImage: 'lib/icons/artsy.png'),
-
-                // berkely
-                BoxItem(itemImage: 'lib/icons/berkely.png')
+                BoxItem(itemImage: 'lib/icons/artsy.png', itemName: 'Artsy',),
+                BoxItem(itemImage: 'lib/icons/berkely.png', itemName: 'berkely',)
               ],
             ),
             SizedBox(height: 24),
@@ -34,8 +31,8 @@ class Feedlist extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                BoxItem(itemImage: 'lib/icons/capucinus.png'),
-                BoxItem(itemImage: 'lib/icons/monogram.png'),
+                BoxItem(itemImage: 'lib/icons/capucinus.png', itemName: 'Capucinus',),
+                BoxItem(itemImage: 'lib/icons/monogram.png', itemName: 'Monogram',),
               ],
             ),
           ],

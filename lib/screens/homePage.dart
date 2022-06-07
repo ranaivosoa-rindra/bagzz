@@ -1,8 +1,10 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, dead_code
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, dead_code, sort_child_properties_last
 
+import 'package:bagzz/utils/bottomBar.dart';
 import 'package:bagzz/utils/boxItem.dart';
 import 'package:bagzz/utils/imageArrival.dart';
 import 'package:bagzz/utils/topBar.dart';
+import 'package:bagzz/widgets/allCategoriesItems.dart';
 import 'package:bagzz/widgets/feedList.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -22,6 +24,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      bottomNavigationBar: Container(
+        width: MediaQuery.of(context).size.width,
+        margin: EdgeInsets.only(
+          bottom: 17, 
+          left: 12, 
+          right: 12
+        ),
+        child: BottomBar(),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -52,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 /// Feedlist
                 Feedlist(),
 
-                SizedBox(height: 20),
+                SizedBox(height: 15),
 
                 /// show by categories
                 // latest button
@@ -68,7 +79,34 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
 
+                SizedBox(
+                  height: 20,
+                ),
+
                 // all categories latest
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 22),
+                  child: Column(
+                    children: [
+                      // text title
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Shop to by categories",
+                          style: GoogleFonts.playfairDisplay(
+                            fontSize: 21,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 15,),
+
+                      // all categories items
+                      AllCategoriesItems(),
+                    ],
+                  ),
+                ),
 
                 /// bottom bar
               ],
