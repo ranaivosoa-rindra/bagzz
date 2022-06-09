@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, dead_code, sort_child_properties_last
 
+import 'dart:convert';
+
 import 'package:bagzz/utils/bottomBar.dart';
 import 'package:bagzz/utils/boxItem.dart';
 import 'package:bagzz/utils/imageArrival.dart';
@@ -7,6 +9,7 @@ import 'package:bagzz/utils/topBar.dart';
 import 'package:bagzz/widgets/allCategoriesItems.dart';
 import 'package:bagzz/widgets/feedList.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';

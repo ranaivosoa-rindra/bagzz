@@ -1,17 +1,20 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-class BottomBar extends StatelessWidget {
+class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  State<BottomBar> createState() => _BottomBarState();
+}
 
+class _BottomBarState extends State<BottomBar> {
+
+  @override
+  Widget build(BuildContext context) {
     return BottomAppBar(
       shape: AutomaticNotchedShape(
         RoundedRectangleBorder(
@@ -32,6 +35,7 @@ class BottomBar extends StatelessWidget {
           IconButton(
             onPressed: () {
               showModalBottomSheet(
+                barrierColor: Colors.transparent,
                   context: context,
                   isScrollControlled: true,
                   shape: RoundedRectangleBorder(
@@ -39,11 +43,17 @@ class BottomBar extends StatelessWidget {
                       top: Radius.circular(50),
                     )
                   ),
-                  backgroundColor: Color.fromRGBO(255, 255, 255, 0.7),
+                  backgroundColor: Color.fromRGBO(255, 255, 255, 0.75),
                   builder: (context) {
                     return Container(
-                      height: MediaQuery.of(context).size.height * 0.75,
-                      child: Text("Hello"),
+                      height: MediaQuery.of(context).size.height * 0.60,
+                      // child: WishList(
+                      //   itemImage: itemImage, 
+                      //   itemName: itemName, 
+                      //   itemSub: itemSub, 
+                      //   itemStyle: itemStyle
+                      // ),
+                      child: Text("hello world"),
                     );
                   }
                 );

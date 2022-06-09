@@ -20,8 +20,6 @@ class _BoxItemState extends State<BoxItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
-      width: MediaQuery.of(context).size.width / 2.5,
       color: Color(0xffF1F1F1),
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10),

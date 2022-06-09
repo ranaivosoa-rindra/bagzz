@@ -2,12 +2,15 @@
 
 import 'dart:convert';
 
+import 'package:bagzz/providers/wishlist.provider.dart';
+import 'package:bagzz/screens/homePage.dart';
 import 'package:bagzz/utils/boxItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class Feedlist extends StatefulWidget {
   const Feedlist({Key? key}) : super(key: key);
@@ -17,25 +20,29 @@ class Feedlist extends StatefulWidget {
 }
 
 class _FeedlistState extends State<Feedlist> {
-  List _items = [];
-
-  Future readJson() async {
-    final String response =
-        await rootBundle.loadString("assets/fake_data.json");
-    final data = await json.decode(response);
-    setState(() {
-      _items = data["product"];
-    });
-  }
+  // List feeds = [];
+  // Future readJson() async {
+  //   final String response =
+  //       await rootBundle.loadString("assets/fake_data.json");
+  //   final data = await json.decode(response);
+  //   setState(() {
+  //     items = data["product"];
+  //   });
+  // }
 
   @override
   void initState() {
     super.initState();
-    readJson();
+    // readJson();
   }
 
   @override
   Widget build(BuildContext context) {
+    // final feeds = Provider.of<Wishes>(context).readJson() as List;
+    final WishesProvider wishesProvider =
+        Provider.of<WishesProvider>(context, listen: false);
+    final myList = wishesProvider.readJson();
+    print(myList.toString());
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 22.0),
       child: Column(
@@ -44,7 +51,7 @@ class _FeedlistState extends State<Feedlist> {
             physics: NeverScrollableScrollPhysics(),
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
-            itemCount: _items.length,
+            itemCount: 4,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 13,
@@ -52,10 +59,14 @@ class _FeedlistState extends State<Feedlist> {
               childAspectRatio: 0.75,
             ),
             itemBuilder: (BuildContext context, int index) {
-              return BoxItem(
-                itemImage: _items[index]["img"], 
-                itemName: _items[index]["title"]
-              );
+              // return BoxItem(
+              //   itemImage: items[index]["img"],
+              //   itemName: items[index]["title"]
+              // );
+
+              return Container(
+                  // child: Text(feeds.length.toString()),
+                  );
             },
           ),
 

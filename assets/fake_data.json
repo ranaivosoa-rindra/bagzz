@@ -2,19 +2,27 @@
   "product": [
     {
       "title": "Artsy",
-      "img": "lib/icons/artsy.png"
+      "img": "lib/icons/artsy.png",
+      "itemSub": "",
+      "itemStyle": ""
     },
     {
       "title": "Berkely",
-      "img": "lib/icons/berkely.png"
+      "img": "lib/icons/berkely.png",
+      "itemSub": "Wallet with chain ",
+      "itemStyle": "Style #36252 0YK0G 1000"
     },
     {
       "title": "Capucinus",
-      "img": "lib/icons/capucinus.png"
+      "img": "lib/icons/capucinus.png",
+      "itemSub": "Wallet with chain",
+      "itemStyle": "Style #36252 0YK0G 1000"
     },
     {
       "title": "Monogram",
-      "img": "lib/icons/monogram.png"
+      "img": "lib/icons/monogram.png",
+      "itemSub": "",
+      "itemStyle": "Style #36252 0YK0G 1000"
     }
   ]
 }
