@@ -57,21 +57,6 @@ class _HomePageState extends State<HomePage> {
                 /// Feedlist
                 Feedlist(),
 
-                SizedBox(height: 15),
-
-                /// show by categories
-                // latest button
-                OutlinedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "check all latest".toUpperCase(),
-                    style: GoogleFonts.workSans(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14),
-                  ),
-                ),
-
                 SizedBox(
                   height: 20,
                 ),

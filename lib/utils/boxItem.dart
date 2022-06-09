@@ -25,10 +25,10 @@ class _BoxItemState extends State<BoxItem> {
       child: Padding(
         padding: const EdgeInsets.only(top: 6.0, bottom: 10),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
-              padding: EdgeInsets.only(left: 15),
+              padding: EdgeInsets.only(left: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +44,7 @@ class _BoxItemState extends State<BoxItem> {
 
                   // outline heart Icons
                   Container(
-                    margin: EdgeInsets.only(left: 22),
+                    margin: EdgeInsets.only(left: 10),
                     child: InkWell(
                       child: (isLiked)
                           ? Image.asset('lib/icons/heart-full.png', width: 15)
@@ -60,7 +60,6 @@ class _BoxItemState extends State<BoxItem> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
             Text(
               widget.itemName,
               style: GoogleFonts.playfairDisplay(
@@ -69,7 +68,7 @@ class _BoxItemState extends State<BoxItem> {
               ),
             ),
             SizedBox(
-              height: 15,
+              height: 8,
             ),
             Text(
               "shop now".toUpperCase(),
