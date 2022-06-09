@@ -1,0 +1,20 @@
+{
+  "product": [
+    {
+      "title": "Artsy",
+      "img": "lib/icons/artsy.png"
+    },
+    {
+      "title": "Berkely",
+      "img": "lib/icons/berkely.png"
+    },
+    {
+      "title": "Capucinus",
+      "img": "lib/icons/capucinus.png"
+    },
+    {
+      "title": "Monogram",
+      "img": "lib/icons/monogram.png"
+    }
+  ]
+}

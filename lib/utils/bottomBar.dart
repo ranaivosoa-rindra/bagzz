@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,15 +11,6 @@ class BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    showMyModal() {
-      return showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text("Title"),
-            content: Text("Quis ipsum sunt laborum consectetur consequat ut elit quis pariatur excepteur."),
-          ),
-        );
-    }
 
     return BottomAppBar(
       shape: AutomaticNotchedShape(
@@ -40,17 +31,22 @@ class BottomBar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              // showModalBottomSheet(
-              //     context: context,
-              //     backgroundColor: Color.fromRGBO(255, 255, 255, 0.6),
-              //     builder: (context) {
-              //       return Container(
-              //         height: MediaQuery.of(context).size.height / 1.5,
-              //         child: Text("Hello"),
-              //       );
-              //     }
-              //   );
-              showMyModal();
+              showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(50),
+                    )
+                  ),
+                  backgroundColor: Color.fromRGBO(255, 255, 255, 0.7),
+                  builder: (context) {
+                    return Container(
+                      height: MediaQuery.of(context).size.height * 0.75,
+                      child: Text("Hello"),
+                    );
+                  }
+                );
             },
             icon: Padding(
               padding: const EdgeInsets.only(bottom: 5.0),
