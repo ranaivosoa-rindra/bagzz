@@ -22,6 +22,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List items = [];
+  List itemsWish = [];
+  Future readJson() async {
+    final String response =
+        await rootBundle.loadString("assets/fake_data.json");
+    final data = await json.decode(response);
+    setState(() {
+      items = data["product"];
+      itemsWish = data["wishes"];
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    readJson();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +47,9 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: Container(
         width: MediaQuery.of(context).size.width,
         margin: EdgeInsets.only(bottom: 17, left: 12, right: 12),
-        child: BottomBar(),
+        child: BottomBar(
+          wishFeeds: itemsWish,
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -58,7 +78,9 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 /// Feedlist
-                Feedlist(),
+                Feedlist(
+                  feeds: items,
+                ),
 
                 SizedBox(
                   height: 20,

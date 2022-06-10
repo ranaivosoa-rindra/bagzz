@@ -3,8 +3,8 @@
     {
       "title": "Artsy",
       "img": "lib/icons/artsy.png",
-      "itemSub": "",
-      "itemStyle": ""
+      "itemSub": "No subs",
+      "itemStyle": "No style"
     },
     {
       "title": "Berkely",
@@ -21,7 +21,21 @@
     {
       "title": "Monogram",
       "img": "lib/icons/monogram.png",
-      "itemSub": "",
+      "itemSub": "No subs",
+      "itemStyle": "No style"
+    }
+  ],
+  "wishes": [
+    {
+      "title": "Berkely",
+      "img": "lib/icons/berkely.png",
+      "itemSub": "Wallet with chain ",
+      "itemStyle": "Style #36252 0YK0G 1000"
+    },
+    {
+      "title": "Capucinus",
+      "img": "lib/icons/capucinus.png",
+      "itemSub": "Wallet with chain",
       "itemStyle": "Style #36252 0YK0G 1000"
     }
   ]

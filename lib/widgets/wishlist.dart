@@ -13,7 +13,10 @@ class WishList extends StatefulWidget {
   
   const WishList({
     Key? key,
-    required this.itemImage, required this.itemName, required this.itemSub, required this.itemStyle,
+    required this.itemImage, 
+    required this.itemName, 
+    required this.itemSub, 
+    required this.itemStyle,
   }) : super(key: key);
 
   @override
@@ -24,48 +27,84 @@ class _WishListState extends State<WishList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(children: [
+      // color: Colors.amber,
+      child: Column(
+      children: [
         Row(
           children: [
             // item image
             Container(
               child: Image.asset(
                 widget.itemImage,
-                width: 100,
+                width: 85,
                 fit: BoxFit.fitWidth,
               ),
             ),
 
+            SizedBox(
+              width: 12,
+            ),
+
             // item caracterisation
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   widget.itemName,
+                  style: GoogleFonts.playfairDisplay(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                SizedBox(
+                  height: 7
                 ),
                 Text(
-                  widget.itemSub
+                  widget.itemSub,
+                  style: GoogleFonts.workSans(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500
+                  ),
+                ),
+                SizedBox(
+                  height: 4,
                 ),
                 Text(
-                  widget.itemStyle
+                  widget.itemStyle,
+                  style: GoogleFonts.workSans(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black.withOpacity(0.5)
+                  ),
                 ),
               ],
             )
           ],
+        ),
+        SizedBox(
+          height: 10
         ),
         Column(
           children: [
             Text(
               "remove".toUpperCase(),
               style: GoogleFonts.workSans(
-                  fontSize: 14, fontWeight: FontWeight.w600),
+                  fontSize: 14, 
+                  fontWeight: FontWeight.w600
+                ),
             ),
             SizedBox(
               height: 5,
             ),
-            Container(color: Colors.black, height: 2, width: 86),
+            Container(
+              color: Colors.black, 
+              height: 2,
+              width: 59
+            ),
           ],
         ),
-      ]),
+      ]
+    ),
     );
   }
 }
