@@ -38,5 +38,23 @@
       "itemSub": "Wallet with chain",
       "itemStyle": "Style #36252 0YK0G 1000"
     }
+  ],
+  "cart": [
+    {
+      "title": "Artsy",
+      "img": "lib/icons/artsy.png",
+      "itemSub": "Wallet with chain",
+      "itemStyle": "No style",
+      "price": "564",
+      "numbers": "1"
+    },
+    {
+      "title": "Monogram",
+      "img": "lib/icons/monogram.png",
+      "itemSub": "Wallet with chain",
+      "itemStyle": "Style #36252 0YK0G 1000",
+      "price": "1638",
+      "numbers": "2"
+    }
   ]
 }

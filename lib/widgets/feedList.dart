@@ -23,21 +23,6 @@ class Feedlist extends StatefulWidget {
 }
 
 class _FeedlistState extends State<Feedlist> {
-  // List items = [];
-  // Future readJson() async {
-  //   final String response =
-  //       await rootBundle.loadString("assets/fake_data.json");
-  //   final data = await json.decode(response);
-  //   setState(() {
-  //     items = data["product"];
-  //   });
-  // }
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   readJson();
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -73,10 +58,10 @@ class _FeedlistState extends State<Feedlist> {
             child: Text(
               "check all latest".toUpperCase(),
               style: GoogleFonts.workSans(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14
-                ),
+                color: Colors.black,
+                fontWeight: FontWeight.w600,
+                fontSize: 14
+              ),
             ),
           ),
         ],

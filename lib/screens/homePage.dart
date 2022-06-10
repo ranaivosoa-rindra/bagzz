@@ -24,6 +24,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List items = [];
   List itemsWish = [];
+  List itemsCart = [];
+
   Future readJson() async {
     final String response =
         await rootBundle.loadString("assets/fake_data.json");
@@ -31,6 +33,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       items = data["product"];
       itemsWish = data["wishes"];
+      itemsCart = data["cart"];
     });
   }
 
@@ -42,6 +45,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // print(itemsCart.length.toString());
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: Container(
@@ -49,6 +53,7 @@ class _HomePageState extends State<HomePage> {
         margin: EdgeInsets.only(bottom: 17, left: 12, right: 12),
         child: BottomBar(
           wishFeeds: itemsWish,
+          cartFeeds: itemsCart,
         ),
       ),
       body: SafeArea(
