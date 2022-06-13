@@ -30,6 +30,7 @@ class _CartListState extends State<CartList> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: 20),
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -80,11 +81,14 @@ class _CartListState extends State<CartList> {
                         ),
                       ),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.black,
+                    InkWell(
+                      onTap: (){},
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                        ),
+                        child: Icon(Icons.add, color: Colors.white,),
                       ),
-                      child: Icon(Icons.add, color: Colors.white,),
                     ),
                   ],
                 ),
@@ -94,45 +98,53 @@ class _CartListState extends State<CartList> {
           SizedBox(
             width: 29,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                widget.itemName,
-                style: GoogleFonts.playfairDisplay(
+          Container(
+            // color: Colors.amber,
+            height: 120,
+            padding: EdgeInsets.only(top: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  widget.itemName,
+                  style: GoogleFonts.playfairDisplay(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w800,
+                    ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.itemSub,
+                      style: GoogleFonts.workSans(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      widget.itemStyle,
+                      style: GoogleFonts.workSans(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black.withOpacity(0.5)
+                      ),
+                    ),
+                  ],
+                ),
+                Text(
+                  "\$${widget.itemPrice}",
+                  style: GoogleFonts.workSans(
                     fontSize: 17,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.bold,
                   ),
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                widget.itemSub,
-                style: GoogleFonts.workSans(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500
                 ),
-              ),
-              SizedBox(
-                height: 2,
-              ),
-              Text(
-                widget.itemStyle,
-                style: GoogleFonts.workSans(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black.withOpacity(0.5)
-                ),
-              ),
-              Text(
-                "\$${widget.itemPrice}",
-                style: GoogleFonts.workSans(
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
