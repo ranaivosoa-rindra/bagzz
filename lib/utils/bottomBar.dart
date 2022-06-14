@@ -21,6 +21,40 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
+  _searchBottomSheet() {
+    showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context,
+        isScrollControlled: true,
+        builder: (context) {
+          return Container(
+            padding: EdgeInsets.only(left: 34, right: 34, top: 24),
+            color: Colors.white,
+            height: MediaQuery.of(context).size.height * 0.875,
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.topRight,
+                  child: IconButton(
+                    icon: Icon(Icons.close),
+                    onPressed: () {},
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: UnderlineInputBorder(),
+                      label: Text("Type here to search"),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
+  }
+
   _itemslistBottomSheet(List itemsList, String title) {
     showModalBottomSheet(
         barrierColor: Colors.transparent,
@@ -68,11 +102,11 @@ class _BottomBarState extends State<BottomBar> {
                         // render cartList
                         if (title == "cartList") ...[
                           CartList(
-                            itemImage: itemsList[index]["img"], 
-                            itemName: itemsList[index]["title"], 
-                            itemSub: itemsList[index]["itemSub"], 
-                            itemStyle: itemsList[index]["itemStyle"], 
-                            itemPrice: itemsList[index]["price"], 
+                            itemImage: itemsList[index]["img"],
+                            itemName: itemsList[index]["title"],
+                            itemSub: itemsList[index]["itemSub"],
+                            itemStyle: itemsList[index]["itemStyle"],
+                            itemPrice: itemsList[index]["price"],
                             itemNumbers: itemsList[index]["numbers"],
                           ),
                         ],
@@ -87,7 +121,7 @@ class _BottomBarState extends State<BottomBar> {
                               height: 1.5),
                         ],
                         if (index == itemsList.length - 1) ...[
-                          if(title == "wishlist")...[
+                          if (title == "wishlist") ...[
                             Padding(
                               padding: EdgeInsets.only(top: 30.0),
                               child: ElevatedButton(
@@ -107,7 +141,7 @@ class _BottomBarState extends State<BottomBar> {
                               ),
                             ),
                           ],
-                          if(title == "cartList")...[
+                          if (title == "cartList") ...[
                             Padding(
                               padding: EdgeInsets.only(top: 30.0),
                               child: ElevatedButton(
@@ -151,9 +185,11 @@ class _BottomBarState extends State<BottomBar> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(onPressed: () {}, icon: Icon(Icons.home)),
-          IconButton(onPressed: () {
-            
-          }, icon: Icon(Icons.search)),
+          IconButton(
+              onPressed: () {
+                _searchBottomSheet();
+              },
+              icon: Icon(Icons.search)),
           IconButton(
             onPressed: () {
               _itemslistBottomSheet(widget.wishFeeds, "wishlist");
