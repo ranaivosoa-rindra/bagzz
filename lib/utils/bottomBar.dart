@@ -151,7 +151,9 @@ class _BottomBarState extends State<BottomBar> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(onPressed: () {}, icon: Icon(Icons.home)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+          IconButton(onPressed: () {
+            
+          }, icon: Icon(Icons.search)),
           IconButton(
             onPressed: () {
               _itemslistBottomSheet(widget.wishFeeds, "wishlist");
